@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model RFP {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  budget      Float?
+  currency    String? 
+  delivery_days Int?
+  payment_terms String?
+  warranty_months Int?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  items       RFPItem[]
+  proposals   Proposal[]
+}
+
+model RFPItem {
+  id       String @id @default(cuid())
+  rfpId    String
+  rfp      RFP    @relation(fields: [rfpId], references: [id])
+  name     String
+  qty      Int
+  specs    Json?
+  createdAt DateTime @default(now())
+}
+
+model Vendor {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  contact   String?
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  proposals Proposal[]
+}
+
+
+
+model Proposal {
+  id          String @id @default(cuid())
+  rfpId       String
+  rfp         RFP    @relation(fields: [rfpId], references: [id])
+  vendorId    String
+  vendor      Vendor @relation(fields: [vendorId], references: [id])
+  raw_email   String?
+  parsed_json Json?
+  total_price Float?
+  currency    String?
+  delivery_days Int?
+  payment_terms String?
+  warranty_months Int?
+  score       Float?
+  recommendation String?
+  createdAt    DateTime @default(now())
+  items        ProposalItem[]
+  attachments  Attachment[]
+}
+
+model ProposalItem {
+  id          String @id @default(cuid())
+  proposalId  String
+  proposal    Proposal @relation(fields: [proposalId], references: [id])
+  name        String
+  qty         Int?
+  unit_price  Float?
+  total_price Float?
+  specs       Json?
+}
+
+model Attachment {
+  id         String @id @default(cuid())
+  proposalId String?
+  proposal   Proposal? @relation(fields: [proposalId], references: [id])
+  filename   String
+  path       String
+  contentType String?
+  size       Int?
+  createdAt  DateTime @default(now())
+}
+
+model EmailLog {
+  id        String @id @default(cuid())
+  type      String // outbound/inbound
+  to        String
+  from      String
+  subject   String
+  body      String
+  raw       Json?
+  createdAt DateTime @default(now())
+}
