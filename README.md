@@ -61,7 +61,56 @@ This project is built using **free and open-source technologies only**, suitable
 📂 Full Project Structure
 -------------------------
 
-ai-rfp-project/├── README.md├── .env.example│├── backend/│ ├── package.json│ ├── prisma/│ │ ├── schema.prisma│ │ └── seed.js│ ├── src/│ │ ├── app.js│ │ ├── server.js│ │ ├── lib/│ │ │ └── prismaClient.js│ │ ├── controllers/│ │ │ ├── rfpController.js│ │ │ ├── vendorController.js│ │ │ ├── proposalController.js│ │ │ └── emailController.js│ │ ├── routes/│ │ │ ├── rfpRoutes.js│ │ │ ├── vendorRoutes.js│ │ │ ├── proposalRoutes.js│ │ │ └── emailRoutes.js│ │ └── services/│ │ ├── aiService.js│ │ ├── mailer.js│ │ └── scoring.js│└── frontend/├── package.json├── vite.config.js├── .env.example└── src/├── main.jsx├── App.jsx├── api/│ └── apiClient.js├── components/│ ├── RFPChatCreate.jsx│ ├── VendorList.jsx│ ├── ProposalComparison.jsx│ └── ProposalDetail.jsx├── pages/│ ├── RFPCreatePage.jsx│ ├── RFPListPage.jsx│ ├── RFPViewPage.jsx│ ├── ComparePage.jsx│ └── VendorsPage.jsx└── index.css
+ai-rfp-project/
+├── README.md
+├── .env.example│
+├── backend/│ 
+            ├── package.json│ 
+            ├── prisma/│  
+                       ├── schema.prisma│  
+                       └── seed.js│ 
+            ├── src/│  
+                    ├── utils/│
+                              ├── app.js│ │ 
+                              ├── server.js│ │ 
+                    ├── lib/│ 
+                            ├── logger.js│
+                            └── prismaClient.js│ 
+                    ├── controllers/│ 
+                                    ├── rfpController.js│ 
+                                    ├── vendorController.js│  
+                                    ├── proposalController.js│  
+                                    └── emailController.js│  
+                    ├── routes/│   
+                               ├── rfpRoutes.js│ 
+                               ├── vendorRoutes.js│  
+                               ├── proposalRoutes.js│   
+                               └── emailRoutes.js│  
+                    └── services/│  
+                                 ├── aiService.js│  
+                                 ├── mailer.js│  
+                                 └── scoring.js│
+└── frontend/│
+             ├── package.json
+             ├── vite.config.js
+             ├── .env.example
+             └── src/│
+                     ├── main.jsx
+                     ├── App.jsx
+                     ├── api/│ 
+                             └── apiClient.js
+                     ├── components/│ 
+                                    ├── RFPChatCreate.jsx│ 
+                                    ├── VendorList.jsx│ 
+                                    ├── ProposalComparison.jsx│ 
+                                    └── ProposalDetail.jsx
+                     ├── pages/│ 
+                               ├── RFPCreatePage.jsx│ 
+                               ├── RFPListPage.jsx│ 
+                               ├── RFPViewPage.jsx│ 
+                               ├── ComparePage.jsx│ 
+                               └── VendorsPage.jsx
+             └── index.css
 
 ⚙️ Environment Setup
 --------------------
