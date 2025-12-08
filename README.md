@@ -8,7 +8,15 @@ This project is built using **free and open-source technologies only**, suitable
 ✨ Key Features
 --------------
 
-✅ Create RFPs from natural language prompts✅ Extract items, budget, delivery, warranty automatically✅ Manage vendors (add, list)✅ Send RFPs via automated email✅ Receive proposals via email simulation✅ Auto-score and compare vendor proposals✅ Identify best vendor automatically✅ Clean multi-page UI✅ Uses only free services
+✅ Create RFPs from natural language prompts
+✅ Extract items, budget, delivery, warranty automatically
+✅ Manage vendors (add, list)
+✅ Send RFPs via automated email
+✅ Receive proposals via email simulation
+✅ Auto-score and compare vendor proposals
+✅ Identify best vendor automatically
+✅ Clean multi-page UI
+✅ Uses only free services
 
 🏗️ Tech Stack
 --------------
